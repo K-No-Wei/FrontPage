@@ -1,6 +1,5 @@
 package com.heima.article.service.Impl;
 
-import com.aliyuncs.utils.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.heima.article.mapper.ApArticleMapper;
 import com.heima.article.service.ApArticleService;
@@ -39,7 +38,7 @@ public class ApArticleServiceImpl  extends ServiceImpl<ApArticleMapper, ApArticl
         }
 
         //校验文章频道
-        if (StringUtils.isEmpty(dto.getTag())) {
+        if ("__all__".equals(dto.getTag())) {
             dto.setTag(ArticleConstants.DEFAULT_TAG);
         }
 

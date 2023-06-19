@@ -32,7 +32,7 @@
         `ap_article` aa
         LEFT JOIN ap_article_config aac ON aa.id = aac.article_id
         <where>
-            and aac.is_delete != 1
+            aac.is_delete != 1
             and aac.is_down != 1
             <!-- loadmore -->
             <if test="type != null and type == 1">
