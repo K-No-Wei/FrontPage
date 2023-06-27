@@ -6,6 +6,7 @@ import com.heima.article.mapper.ApArticleConfigMapper;
 import com.heima.article.mapper.ApArticleContentMapper;
 import com.heima.article.mapper.ApArticleMapper;
 import com.heima.article.service.ApArticleService;
+import com.heima.article.service.ArticleFreemarkerService;
 import com.heima.common.constants.ArticleConstants;
 import com.heima.model.article.dtos.ArticleDto;
 import com.heima.model.article.dtos.ArticleHomeDto;
@@ -66,6 +67,14 @@ public class ApArticleServiceImpl  extends ServiceImpl<ApArticleMapper, ApArticl
     @Autowired
     private ApArticleContentMapper apArticleContentMapper;
 
+    @Autowired
+    private ArticleFreemarkerService articleFreemarkerService;
+
+    /**
+     * 保持app的文章
+     * @param dto
+     * @return
+     */
     @Override
     public ResponseResult saveArticle(ArticleDto dto) {
         if (dto == null) {
@@ -95,6 +104,9 @@ public class ApArticleServiceImpl  extends ServiceImpl<ApArticleMapper, ApArticl
             apArticleContent.setContent(dto.getContent());
             apArticleContentMapper.updateById(apArticleContent);
         }
+
+        //保持静态文件到minio中
+        articleFreemarkerService.buildArticleToMiIO(apArticle, dto.getContent());
 
         return ResponseResult.okResult(apArticle.getId());
     }
