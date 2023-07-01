@@ -15,7 +15,7 @@ public class ConsumerQuickStart {
         //1.添加kafka的配置信息
         Properties properties = new Properties();
         //kafka的连接地址
-        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.150.102:9092");
+        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.150.101:9092");
         //消费者组
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "group2");
         //消息的反序列化器

@@ -19,7 +19,7 @@ public class TestMinio {
 
     @Test
     public void test() throws FileNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream("D:\\like\\552610.png");
+        FileInputStream fileInputStream = new FileInputStream("D:\\like\\29046.png");
 
         String path = fileStorageService.uploadImgFile("", "like.png", fileInputStream);
 

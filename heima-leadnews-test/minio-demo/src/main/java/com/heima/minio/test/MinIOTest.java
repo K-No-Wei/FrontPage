@@ -10,10 +10,10 @@ public class MinIOTest {
         FileInputStream fileInputStream = null;
 
         try {
-            fileInputStream = new FileInputStream("D:\\like\\552610.png");
+            fileInputStream = new FileInputStream("D:\\like\\29046.png");
 
             MinioClient minioClient = MinioClient.builder().credentials("minioadmin", "minioadmin")
-                    .endpoint("http://192.168.150.102:9000")
+                    .endpoint("http://192.168.150.101:9000")
                     .build();
 
             PutObjectArgs putObjectArgs = PutObjectArgs.builder()
@@ -25,7 +25,7 @@ public class MinIOTest {
 
             minioClient.putObject(putObjectArgs);
 
-            System.out.println("http://192.168.150.102:9000/leadnews/list.png");
+            System.out.println("http://192.168.150.101:9000/leadnews/list.png");
 
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -1,0 +1,11 @@
+server:
+  port: 8881
+
+
+xxl:
+  job:
+    admin:
+      addresses: http://192.168.150.101:8888/xxl-job-admin
+    executor:
+      appname: xxl-job-executor-sample
+      port: 9999

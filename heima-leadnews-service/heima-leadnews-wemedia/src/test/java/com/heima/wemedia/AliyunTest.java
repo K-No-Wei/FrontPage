@@ -33,7 +33,7 @@ public class AliyunTest {
 
     @Test
     public void testScanImage() throws Exception {
-        byte[] bytes = fileStorageService.downLoadFile("http://192.168.150.102:9000/leadnews/2021/04/26/ef3cbe458db249f7bd6fb4339e593e55.jpg");
+        byte[] bytes = fileStorageService.downLoadFile("http://192.168.150.101:9000/leadnews/2021/04/26/ef3cbe458db249f7bd6fb4339e593e55.jpg");
         Map map = greenImageScan.imageScan(Arrays.asList(bytes));
         System.out.println(map);
     }

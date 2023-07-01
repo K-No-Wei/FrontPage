@@ -15,7 +15,7 @@ public class ProducerQuickStart {
         //1.kafka的配置信息
         Properties properties = new Properties();
         //kafka的连接地址
-        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"192.168.150.102:9092");
+        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"192.168.150.101:9092");
         //发送失败，失败的重试次数
         properties.put(ProducerConfig.RETRIES_CONFIG,5);
         //消息key的序列化器

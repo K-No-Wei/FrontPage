@@ -4,7 +4,7 @@ spring:
   application:
     name: kafka-demo
   kafka:
-    bootstrap-servers: 192.168.150.102:9092
+    bootstrap-servers: 192.168.150.101:9092
     producer:
       retries: 10
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
